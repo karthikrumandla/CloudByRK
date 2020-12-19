@@ -59,3 +59,4 @@ $(window).on('resize', function(){
         if($("#show-sidebar")){$("#show-sidebar").click();}
     }
 });
+
