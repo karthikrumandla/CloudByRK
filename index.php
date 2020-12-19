@@ -13,7 +13,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css">
     <link href="./css/main.css" rel="stylesheet">
+    <link href="./css/cursors.css" rel="stylesheet">
+    <script>
+const MyVar = {
+        USER : 'users.html',
+        TICKET : 'include/tickets.php',
+        IMAP : 'imap.html'
+};
+function MyAjaxCall(Name,Query={},Method='POST',TagId='ConVox-Container')
+{
+    //alert(Name);
+    //alert(window.location.href);
+    $.post(
+        MyVar[Name],
+        Query,
+        function(Data,status){
+                //alert("Data: " + Data + "\nStatus: " + status);
+                $('#'+TagId).html(Data);
+    }).done(function() {
+                //alert( "second success" );
+//window.history.pushState(window.location.href, "Sample Title", Name);
+//document.title = Name+" - ConVox Cloud";
+    }).fail(function() {
+                alert( "error" );
+    });
+}
+
+function URLParams(E){
+        const Params = new URLSearchParams(E);
+        return Array.from(Params.keys()).reduce((acc, key) => ({...acc, [key]:Params.get(key)}),{});
+}
+
+</script>
 
 </head>
 
@@ -73,7 +106,7 @@
             </a>
           </li>
           <li class="sidebar-dropdown">
-            <a href="#">
+            <a onclick="MyAjaxCall('TICKET');">
               <i class="fa fa-ticket-alt"></i>
               <span>Tickets</span>
               <span class="badge badge-pill badge-danger">3</span>
@@ -177,6 +210,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
+    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table-locale-all.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.18.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
     
 </body>
 

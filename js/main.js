@@ -37,14 +37,25 @@ $("#show-sidebar").click(function() {
   if (win.width() <= 700){$("#MyFooter").hide();}
 });
 
+$("a").addClass("pointer");
+
     var win = $(this); //this = window
     if (win.width() <= 700) { if($("#close-sidebar")){$("#close-sidebar").click();} }
     else{if($("#show-sidebar")){$("#show-sidebar").click();}}
+
+    $(".my-special-table").click(function(){
+        $("img").attr("width","500");
+      });
+
    
 });
 
 $(window).on('resize', function(){
     var win = $(this); //this = window
-    if (win.width() <= 700) { if($("#close-sidebar")){$("#close-sidebar").click();} }
-    else{if($("#show-sidebar")){$("#show-sidebar").click();}}
+    if (win.width() <= 700) { 
+        if($("#close-sidebar")){$("#close-sidebar").click();} 
+    }
+    else{
+        if($("#show-sidebar")){$("#show-sidebar").click();}
+    }
 });

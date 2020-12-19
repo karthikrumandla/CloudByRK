@@ -73,6 +73,19 @@ body {
   margin: 2px;
 }
 
+.my-icon-button{
+    margin-right: 10px;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+  }
+.my-bg-dark{
+    background-color: #3a3f48;
+    color: #b8bfce;
+}
 .page-wrapper .theme.chiller-theme {
   background: #1e2229;
 }
@@ -85,7 +98,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .page-wrapper.toggled .page-content {
-    padding-left: 300px;
+    padding-left: 260px;
   }
 }
 /*----------------show sidebar button----------------*/
