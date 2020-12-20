@@ -201,6 +201,7 @@ function URLParams(E){
     </nav>
 
   </main>
+  
   <!-- page-content" -->
 </div>
 <!-- page-wrapper -->

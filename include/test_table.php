@@ -6,7 +6,6 @@
 <head>
 <link href="https://unpkg.com/bootstrap-table@1.18.1/dist/bootstrap-table.min.css" rel="stylesheet">
 
-
 <style>
   .select,
   #locale {
